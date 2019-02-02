@@ -7,7 +7,7 @@
 
 Name:           rust-%{crate}
 Version:        0.11.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Progress bar and cli reporting library for Rust
 
 License:        MIT
@@ -75,5 +75,8 @@ which use "default" feature of "%{crate}" crate.
 %endif
 
 %changelog
+* Sat Feb 02 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.11.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
 * Mon Jan 28 2019 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.11.0-1
 - Initial package
