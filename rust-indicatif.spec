@@ -6,7 +6,7 @@
 
 Name:           rust-%{crate}
 Version:        0.15.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Progress bar and cli reporting library for Rust
 
 # Upstream license specification: MIT
@@ -131,6 +131,9 @@ which use "with_rayon" feature of "%{crate}" crate.
 %endif
 
 %changelog
+* Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.15.0-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.15.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
