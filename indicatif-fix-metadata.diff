@@ -1,0 +1,11 @@
+--- indicatif-0.15.0/Cargo.toml	2020-06-14T22:23:13+00:00
++++ indicatif-0.15.0/Cargo.toml	2021-07-20T13:40:06.248644+00:00
+@@ -29,7 +29,7 @@
+ version = "1.0"
+ 
+ [dependencies.number_prefix]
+-version = "0.3"
++version = "0.4"
+ 
+ [dependencies.rayon]
+ version = "1.0"

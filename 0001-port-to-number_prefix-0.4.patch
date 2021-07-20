@@ -1,0 +1,58 @@
+From 5d9ef658048057348644bf4ddc85543197f31123 Mon Sep 17 00:00:00 2001
+From: Fabio Valentini <decathorpe@gmail.com>
+Date: Tue, 20 Jul 2021 15:44:44 +0200
+Subject: [PATCH] port to number_prefix 0.4
+
+---
+ src/format.rs | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/src/format.rs b/src/format.rs
+index 99eb0c4..7333248 100644
+--- a/src/format.rs
++++ b/src/format.rs
+@@ -1,7 +1,7 @@
+ use std::fmt;
+ use std::time::Duration;
+ 
+-use number_prefix::{NumberPrefix, PrefixNames, Prefixed, Standalone};
++use number_prefix::NumberPrefix;
+ 
+ /// Wraps an std duration for human basic formatting.
+ #[derive(Debug)]
+@@ -77,8 +77,8 @@ impl fmt::Display for HumanDuration {
+ impl fmt::Display for HumanBytes {
+     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+         match NumberPrefix::binary(self.0 as f64) {
+-            Standalone(number) => write!(f, "{:.0}B", number),
+-            Prefixed(prefix, number) => write!(
++            NumberPrefix::Standalone(number) => write!(f, "{:.0}B", number),
++            NumberPrefix::Prefixed(prefix, number) => write!(
+                 f,
+                 "{:.2}{}B",
+                 number,
+@@ -91,8 +91,8 @@ impl fmt::Display for HumanBytes {
+ impl fmt::Display for DecimalBytes {
+     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+         match NumberPrefix::decimal(self.0 as f64) {
+-            Standalone(number) => write!(f, "{:.0}B", number),
+-            Prefixed(prefix, number) => write!(f, "{:.2}{}B", number, prefix),
++            NumberPrefix::Standalone(number) => write!(f, "{:.0}B", number),
++            NumberPrefix::Prefixed(prefix, number) => write!(f, "{:.2}{}B", number, prefix),
+         }
+     }
+ }
+@@ -100,8 +100,8 @@ impl fmt::Display for DecimalBytes {
+ impl fmt::Display for BinaryBytes {
+     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+         match NumberPrefix::binary(self.0 as f64) {
+-            Standalone(number) => write!(f, "{:.0}B", number),
+-            Prefixed(prefix, number) => write!(f, "{:.2}{}B", number, prefix),
++            NumberPrefix::Standalone(number) => write!(f, "{:.0}B", number),
++            NumberPrefix::Prefixed(prefix, number) => write!(f, "{:.2}{}B", number, prefix),
+         }
+     }
+ }
+-- 
+2.31.1
+
