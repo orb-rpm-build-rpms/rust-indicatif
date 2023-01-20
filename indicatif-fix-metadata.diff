@@ -1,0 +1,11 @@
+--- indicatif-0.17.3/Cargo.toml	1970-01-01T00:00:01+00:00
++++ indicatif-0.17.3/Cargo.toml	2023-01-20T05:12:25.067446+00:00
+@@ -45,7 +45,7 @@
+ version = "0.4"
+ 
+ [dependencies.portable-atomic]
+-version = "0.3.15"
++version = "1"
+ 
+ [dependencies.rayon]
+ version = "1.1"
