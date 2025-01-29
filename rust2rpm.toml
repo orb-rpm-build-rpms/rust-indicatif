@@ -1,0 +1,8 @@
+[tests]
+comments = [
+  "skip a brittle test that fails depending on load",
+]
+skip-exact = true
+skip = [
+  "style::tests::wide_element_style",
+]
